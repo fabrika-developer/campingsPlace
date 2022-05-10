@@ -1,0 +1,12 @@
+LOG ID: 9wbF4J6jCahIbeMD6M4pJkLr9TAvYOz0
+Mensagem de Log:    Meu Log Mensagem 
+Total Time:         1652181170m secs 
+Data de Log:        10-05-2022 
+Hora de Log:        01:12:50pm 
+
+LOG ID: BtifbFR9VdCsihZJlMjRIr5jZuh3hIpJ
+Mensagem de Log:    Meu Log Mensagem 
+Total Time:         1652181365m secs 
+Data de Log:        10-05-2022 
+Hora de Log:        01:16:05pm 
+
