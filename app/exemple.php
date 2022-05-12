@@ -1,5 +1,7 @@
 <?php
 require_once '../autoload.php';
 
-echo $langBrowser;
-echo FabrikaMakeLogs::makeLogs('Meu Log Mensagem');
+echo $langBrowser . '<br>';
+// echo FabrikaMakeLogs::makeLogs('Meu Log Mensagem');
+FabrikaConnectBD::connDB($conn);
+FabrikaConnectBD::closeConnDB($conn);
