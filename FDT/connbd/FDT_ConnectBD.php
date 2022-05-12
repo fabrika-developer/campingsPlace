@@ -11,30 +11,94 @@
 
 class FabrikaConnectBD{
 
+    public $host = "localhost";
+    public $user = "root";
+    public $pass = "";
+    public $db;
+    public $table;
+    public $data;
+    public $action;
+    public $fields;
+    public $where;
     public $conn;
 
-    public static function connDB($conn){
-
-        // Declaramos variables
-        $host = "localhost";
-        $user = "root";
-        $pass = "";
-        $db = "mysql";
-
-        // Conectamos ao banco de dados
+    public static function connectToDb($host, $user, $pass, $db){
         $conn = new mysqli($host, $user, $pass, $db);
-
-        // Verificamos se a conexão foi realizada com sucesso
-        if ($conn->connect_error) {
+        if($conn->connect_error){
             die("Connection failed: " . $conn->connect_error);
-        } else {
-            echo "Connected successfully <br>";
+        }else{
+            // echo "Connected successfully";
+            return $conn;
         }
     }
 
-    public static function closeConnDB($conn){
-        // Fechamos a conexão
-        echo "Connection closed <br>";
-        $conn->close();
+    // funcciones en las tablas
+    public static function selectData($fields, $table, $where){
+        try{
+            $conn = FabrikaConnectBD::connectToDb('localhost', 'root', '', 'fdt_general');
+            $sql = "SELECT $fields FROM $table WHERE $where";
+            $result = $conn->query($sql);
+            if($result->num_rows > 0){
+                while($row = $result->fetch_assoc()){
+                    echo "id: " . $row["id"] . " - Name: " . $row["name"] . " - Email: " . $row["email"] . "<br>";
+                }
+            }else{
+                echo "0 results";
+            }
+            $conn->close();
+        }catch(Exception $e){
+            echo "Error: " . $e->getMessage($conn->connect_error);
+        }
     }
+
+    public static function updateData($table, $fields, $data, $where){
+        try{
+            $conn = FabrikaConnectBD::connectToDb('localhost', 'root', '', 'fdt_general');
+            $sql = "UPDATE $table SET $data WHERE $where";
+            $result = $conn->query($sql);
+            if($result){
+                echo "Data updated successfully";
+            }else{
+                echo "Error updating data: " . $conn->error;
+            }
+            $conn->close();
+        }catch(Exception $e){
+            echo "Error: " . $e->getMessage($conn->connect_error);
+        }
+    }
+
+    public static function insertData($table, $fields, $data){
+        try{
+            $conn = FabrikaConnectBD::connectToDb('localhost', 'root', '', 'fdt_general');
+            $sql = "INSERT INTO $table ($fields) VALUES ($data)";
+            var_dump($sql);
+            $result = $conn->query($sql);
+            if($result){
+                echo "Data inserted successfully";
+            }else{
+                echo "Error inserting data: " . $conn->error;
+            }
+            $conn->close();
+        }catch(Exception $e){
+            echo "Error: " . $e->getMessage($conn->connect_error);
+        }
+    }
+
+    public static function deleteData($fields, $table, $where){
+        try{
+            $conn = FabrikaConnectBD::connectToDb('localhost', 'root', '', 'fdt_general');
+            $sql = "DELETE FROM $table WHERE $where";
+            $result = $conn->query($sql);
+            if($result){
+                echo "Data deleted successfully";
+            }else{
+                echo "Error deleting data: " . $conn->error;
+            }
+            $conn->close();
+        }catch(Exception $e){
+            echo "Error: " . $e->getMessage($conn->connect_error);
+        }
+    }
+
+   
 }
