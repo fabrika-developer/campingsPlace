@@ -5,6 +5,6 @@
 /logs/*
 !/logs/README.md
 .phpunit.result.cache
-/mysql_data/
-/phpmyadmin_data/
+slim/phpmyadmin_data/
+slim/mysql_data/
 
