@@ -29,7 +29,7 @@ return function (App $app) {
     $app->get('/dbcase', function (Request $request, Response $response) {
 
         // Test SLIM Framework DB Connection
-                        
+        
 
     });
 
