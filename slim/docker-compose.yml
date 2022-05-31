@@ -18,6 +18,8 @@ services:
             - logs:/var/www/logs
         depends_on:
             - mysql
+        networks:
+            - app-network
     mysql:
         image: mysql:5.7
         container_name: mysql
@@ -29,6 +31,8 @@ services:
         - "6033:3306"
         volumes: 
         - ./mysql_data:/var/lib/mysql
+        networks:
+            - app-network
     phpmyadmin:
         image: phpmyadmin/phpmyadmin
         container_name: pma_user
@@ -45,3 +49,9 @@ services:
             - ./phpmyadmin_data:/var/www/html/phpmyadmin
         depends_on:
             - mysql
+        networks:
+            - app-network
+
+networks:
+    app-network:
+        driver: bridge

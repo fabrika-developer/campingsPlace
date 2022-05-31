@@ -22,8 +22,8 @@ return function (ContainerBuilder $containerBuilder) {
                     'level' => Logger::DEBUG,
                 ],
                 "db" => [
-                    'driver' => 'mysql',
-                    'host' => '172.26.0.1',
+                    'driver' => 'PDO',
+                    'host' => '172.18.0.2',
                     'username' => 'root',
                     'database' => 'slimmysql',
                     'password' => 'root',

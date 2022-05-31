@@ -5,10 +5,12 @@ declare(strict_types=1);
 use App\Application\Actions\User\ListUsersAction;
 use App\Application\Actions\User\ListDbData;
 use App\Application\Actions\User\ViewUserAction;
+use DI\ContainerBuilder;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\App;
 use Slim\Interfaces\RouteCollectorProxyInterface as Group;
+
 
 return function (App $app) {
     $app->options('/{routes:.*}', function (Request $request, Response $response) {
@@ -23,14 +25,14 @@ return function (App $app) {
 
     $app->group('/users', function (Group $group) {
         $group->get('', ListUsersAction::class);
-        $group->get('/{id}', ViewUserAction::class);
+        // $group->get('/{id}', ViewUserAction::class);
     });
 
     $app->get('/dbcase', function (Request $request, Response $response) {
 
-        // Test SLIM Framework DB Connection
+        $response->getBody()->write($_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']);
         
-
+        return $response;
     });
 
 };

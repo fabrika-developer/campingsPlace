@@ -1,6 +1,6 @@
 <?php
 // connection to database
-$db = new PDO('mysql:host=127.27.0.1:6033;dbname=slimDB', 'root', 'root');
+$db = new PDO('mysql:host=127.18.0.2:6033;dbname=slimmysql', 'root', 'root');
 
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -14,7 +14,7 @@ if (!$db) {
 }
 
 // select all data from table
-$sql = 'SELECT * FROM users';
+$sql = 'SELECT * FROM test';
 $stmt = $db->prepare($sql);
 $stmt->execute();
 $data = $stmt->fetchAll();
