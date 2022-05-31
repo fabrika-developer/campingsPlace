@@ -5,8 +5,9 @@ volumes:
         driver: local
 
 services:
-    slim:
+    slimmain:
         image: php:8-alpine
+        container_name: slimmain
         working_dir: /var/www
         command: php -S 0.0.0.0:8080 -t public
         environment:
@@ -17,12 +18,13 @@ services:
             - .:/var/www
             - logs:/var/www/logs
         depends_on:
-            - mysql
+            - mysqlmain
         networks:
-            - app-network
-    mysql:
+            app-network:
+                ipv4_address: 10.5.0.4
+    mysqlmain:
         image: mysql:5.7
-        container_name: mysql
+        container_name: mysqlmain
         environment:
             MYSQL_ROOT_PASSWORD: 'root'
             MYSQL_DATABASE: 'slimmysql'
@@ -32,12 +34,13 @@ services:
         volumes: 
         - ./mysql_data:/var/lib/mysql
         networks:
-            - app-network
-    phpmyadmin:
+            app-network:
+                ipv4_address: 10.5.0.5
+    phpmyadminmain:
         image: phpmyadmin/phpmyadmin
-        container_name: pma_user
+        container_name: pma_usermain
         links:
-            - mysql
+            - mysqlmain
         environment:
             PMA_HOST: mysql
             PMA_PORT: 3306
@@ -48,10 +51,15 @@ services:
         volumes:
             - ./phpmyadmin_data:/var/www/html/phpmyadmin
         depends_on:
-            - mysql
+            - mysqlmain
         networks:
-            - app-network
+            app-network:
+                ipv4_address: 10.5.0.6
 
 networks:
     app-network:
         driver: bridge
+        ipam:
+            config:
+                - subnet: 10.5.0.0/16
+                  gateway: 10.5.0.1

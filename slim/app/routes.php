@@ -25,14 +25,17 @@ return function (App $app) {
 
     $app->group('/users', function (Group $group) {
         $group->get('', ListUsersAction::class);
-        // $group->get('/{id}', ViewUserAction::class);
+        $group->get('/{id}', ViewUserAction::class);
     });
 
-    $app->get('/dbcase', function (Request $request, Response $response) {
-
-        $response->getBody()->write($_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']);
-        
-        return $response;
+    $app->get('/db-test', function (Request $request, Response $response) {
+        $db = $this->get(PDO::class);
+        $sth = $db->prepare("SELECT * FROM test ORDER BY id");
+        $sth->execute();
+        $data = $sth->fetchAll(PDO::FETCH_ASSOC);
+        $payload = json_encode($data);
+        $response->getBody()->write($payload);
+        return $response->withHeader('Content-Type', 'application/json');
     });
 
 };

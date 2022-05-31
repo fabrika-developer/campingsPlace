@@ -41,7 +41,19 @@ composer test
 
 That's it! Now go build something cool.
 
+
+## To Find IP address
+
 docker inspect -f '{{.Name}} - {{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $(docker ps -aq)
+
+## Error Could not find Driver PDO:
+Execute :
+````
+docker exec -it slim_slim_1 /bin/sh
+docker-php-ext-install pdo pdo_mysql
+````
+
+## docker-composer.yml
 
 ````
 version: '3.7'
@@ -62,11 +74,13 @@ services:
         volumes:
             - .:/var/www
             - logs:/var/www/logs
+        depends_on:
+            - mysql
+        networks:
+            - app-network
     mysql:
         image: mysql:5.7
         container_name: mysql
-        links:
-            - slim
         environment:
             MYSQL_ROOT_PASSWORD: 'root'
             MYSQL_DATABASE: 'slimmysql'
@@ -75,8 +89,8 @@ services:
         - "6033:3306"
         volumes: 
         - ./mysql_data:/var/lib/mysql
-
-
+        networks:
+            - app-network
     phpmyadmin:
         image: phpmyadmin/phpmyadmin
         container_name: pma_user
@@ -91,4 +105,14 @@ services:
             - 8081:80
         volumes:
             - ./phpmyadmin_data:/var/www/html/phpmyadmin
+        depends_on:
+            - mysql
+        networks:
+            - app-network
+
+networks:
+    app-network:
+        driver: bridge
+
+
 ````

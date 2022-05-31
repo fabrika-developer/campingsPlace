@@ -2,7 +2,7 @@
 
     function getData($select, $table)
     {
-        $db = new PDO('mysql:host=127.18.0.2:6033;dbname=slimmysql', 'root', 'root');
+        $db = new PDO('mysql:host=127.19.0.2:6033;dbname=slimmysql', 'root', 'root');
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
@@ -15,3 +15,5 @@
         print_r($data);
         echo '</pre>';
     };
+
+    getData('*', 'test');

@@ -1,5 +1,4 @@
 <?php
-
 declare(strict_types=1);
 
 use App\Application\Settings\Settings;
@@ -23,7 +22,7 @@ return function (ContainerBuilder $containerBuilder) {
                 ],
                 "db" => [
                     'driver' => 'PDO',
-                    'host' => '172.18.0.2',
+                    'host' => '10.5.0.5:3306',
                     'username' => 'root',
                     'database' => 'slimmysql',
                     'password' => 'root',
