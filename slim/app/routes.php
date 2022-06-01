@@ -11,6 +11,8 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\App;
 use Slim\Interfaces\RouteCollectorProxyInterface as Group;
 
+use App\Application\Fdt;
+
 
 return function (App $app) {
     $app->options('/{routes:.*}', function (Request $request, Response $response) {
@@ -36,6 +38,12 @@ return function (App $app) {
         $payload = json_encode($data);
         $response->getBody()->write($payload);
         return $response->withHeader('Content-Type', 'application/json');
+    });
+
+    $app->get('/mySelectDB', function (Request $request, Response $response) {
+        $jose = new Fdt\MySelectDB();
+        $response = $jose->getData($response);
+        return $response;
     });
 
 };
