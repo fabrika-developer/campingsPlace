@@ -1,13 +1,13 @@
 .idea/
 .vscode/
-slim/coverage/
-slim/vendor/
+
+slim/coverage/*
+slim/vendor/*
 slim/logs/*
+slim/mysql_data/*
+slim/phpmyadmin_data/*
+
 !/logs/README.md
 .phpunit.result.cache
-slim/mysql_data/
-slim/phpmyadmin_data/
-/mysql_data/
-/phpmyadmin_data/
-/logs/
+
 
