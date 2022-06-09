@@ -7,7 +7,7 @@
         {
             $db = new PDO('mysql:host=10.5.0.5:3306;dbname=slimmysql', 'root', 'root');
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
+            $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
             return $db;
         }
         // Select Data Query
@@ -17,8 +17,8 @@
             $sql = "SELECT ".$select." FROM ".$from." ".$where." ORDER BY ".$order."";
             $stmt = $db->prepare($sql);
             $stmt->execute();
-            $data = $stmt->fetchAll();
-            return $data;
+            // $data = $stmt->fetchALL();
+            return $stmt;
         }
         // Insert data to table
         public function insertDataToTable($database, $values)
@@ -28,7 +28,6 @@
             $stmt = $db->prepare($sql);
             $stmt->execute($values);
             $data = $stmt->fetchAll();
-            return $data;
         }
         // Update data to table
         public function updateDataToTable($database, $values, $where)
@@ -56,7 +55,5 @@
             $sql = "DELETE FROM ".$database." WHERE ".$where."";
             $stmt = $db->prepare($sql);
             $stmt->execute();
-            $data = $stmt->fetchAll();
-            return $data;
         }
     }
