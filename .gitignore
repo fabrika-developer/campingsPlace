@@ -7,6 +7,10 @@ slim/logs/*
 slim/mysql_data/*
 slim/phpmyadmin_data/*
 
+slim/mysql_data/
+mysql_data/
+mysql_data
+
 !/logs/README.md
 .phpunit.result.cache
 
