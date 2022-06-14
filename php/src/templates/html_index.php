@@ -10,7 +10,7 @@
  **/
 if(ISSET($_COOKIE['hola'])){
     $htmlHome = '
-    <p> Bienvenido '.$_COOKIE['hola'].'</p>';
+     Bienvenido '.$_COOKIE['hola'].'';
 }else{
         $htmlHome = '';
     }

@@ -36,7 +36,7 @@ require_once("../templates/menu.php");
 
 echo $navbar;
 
-echo $htmlHome;
+
 
 
 

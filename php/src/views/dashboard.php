@@ -24,7 +24,7 @@
 
  require_once("../templates/html_dashboard.php");
 
- require_once("../templates/html_searcher.php");
+//  require_once("../templates/html_searcher.php");
 
  require_once("../templates/html_footer.php");
 

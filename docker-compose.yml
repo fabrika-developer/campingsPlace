@@ -23,6 +23,7 @@ services:
             PMA_ARBITRARY: 1
         ports:
             - 8081:80
+        restart: always
     php-apache-environment:
         container_name: php-apache
         build:
@@ -32,3 +33,4 @@ services:
             - ./php/src:/var/www/html/
         ports:
             - 8000:80
+        restart: always

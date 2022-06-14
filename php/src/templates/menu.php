@@ -12,13 +12,10 @@
 
 error_reporting(1);
 $navbar = '
-
-
-
         <nav class="navbar navbar-expand-sm navbar-light bg-light sticky-top nav-fill w-100">
 
             <a class="navbar-brand" href="index.php">
-            <img src="../../../images/logo.svg" alt="Fabrika Dev" width="60">
+            <img src="../images/logo.png" alt="Fabrika Dev" width="60">
             </a>
 
             <a class="navbar-brand" href="index.php">  Campings | Place </a>&nbsp;
@@ -68,7 +65,8 @@ $navbar = '
                         }else{
 
                             $navbar .= '
-                            <li><a class="nav-link" href="logout.php">Logout </a></li>';                        
+                            <li><a class="nav-link" href="logout.php">Logout </a></li>';
+                            $navbar .= '<li><a class="nav-link" href="logout.php">'. $htmlHome .'</a></li>';
                         };
                         
 $navbar .= '
