@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+    mysql-server:
+        image: mysql:5.7
+        container_name: mysql-server
+        environment:
+            MYSQL_ROOT_PASSWORD: 'root'
+            MYSQL_DATABASE: 'campingsPlaceMysql'
+            MYSQL_PASSWORD: 'root'
+        volumes:
+            - ./src:/var/lib/mysql/
+        ports:
+            - 3307:3306
+        restart: always

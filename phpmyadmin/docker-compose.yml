@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+    php-myadmin:
+        image: phpmyadmin/phpmyadmin
+        container_name: php-myadmin
+        volumes:
+            - ./src:/var/www/html/phpmyadmin
+        environment:
+            PMA_HOST: sql_CPN
+            PMA_PORT: 3306
+            PMA_ARBITRARY: 1
+        ports:
+            - 8081:80
