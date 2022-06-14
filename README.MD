@@ -137,8 +137,10 @@ docker-compose up -d --force-recreate
 composer require --dev phpdocumentor/shim
 ```
 
-- Para Ejecutar
+- Para Ejecutar una actualización en la documentación
 
 ```
 php vendor/bin/phpdoc run -d php -t documentation --title CampingsPlace --template="clean" --cache-folder [folder-cache]
 ```
+
+- Para leer la documentacion basta con que se ejecute el index.html que esta dentro de la carpeta 'documentation' en su browser.
