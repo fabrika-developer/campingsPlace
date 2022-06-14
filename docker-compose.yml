@@ -1,56 +1,34 @@
-version: '3.7'
-
-volumes:
-    logs:
-        driver: local
-
+version: '3.8'
 services:
-    fdt_CPN:
-        image: php:8-alpine
-        #image: httpd:latest
-        container_name: fdt_CPN
-        depends_on:
-            - sql_CPN
-        links:
-            - sql_CPN
-        build:
-            context: /home/laptoplenovo/Documentos/FDT
-            dockerfile: /home/laptoplenovo/Documentos/FDT/Dockerfile
-        working_dir: /home/laptoplenovo/Documentos/FDT
-        command: php -S 0.0.0.0:8080 -t /home/laptoplenovo/Documentos/FDT
-        environment:
-            docker: "true"
-        ports:
-            - 8080:8080
-        volumes:
-            - .:/home/laptoplenovo/Documentos/FDT
-            - logs:/home/laptoplenovo/Documentos/FDT/logs
-
-    sql_CPN:
+    mysql-server:
         image: mysql:5.7
-        container_name: sql_CPN
+        container_name: mysql-server
         environment:
             MYSQL_ROOT_PASSWORD: 'root'
-            MYSQL_DATABASE: ' campingsPlaceMysql'
+            MYSQL_DATABASE: 'campingsPlaceMysql'
             MYSQL_PASSWORD: 'root'
+        volumes:
+            - ./mysql/src:/var/lib/mysql/
         ports:
-        - "6033:3306"
-        volumes: 
-        - ./mysql_data:/var/lib/mysql
-
-    myadm_CPN:
+            - 3307:3306
+        restart: always
+    php-myadmin:
         image: phpmyadmin/phpmyadmin
-        container_name: myadm_CPN
-        links:
-            - sql_CPN
-        depends_on:
-            - sql_CPN
+        container_name: php-myadmin
+        volumes:
+            - ./phpmyadmin/src:/var/www/html/phpmyadmin
         environment:
-            PMA_HOST: mysql
+            PMA_HOST: sql_CPN
             PMA_PORT: 3306
             PMA_ARBITRARY: 1
-        restart: always
         ports:
             - 8081:80
+    php-apache-environment:
+        container_name: php-apache
+        build:
+            context: ./
+            dockerfile: php/Dockerfile
         volumes:
-            - ./phpmyadmin_data:/var/www/html/phpmyadmin
+            - ./php/src:/var/www/html/
+        ports:
+            - 8000:80
