@@ -8,8 +8,14 @@
  * @license     Licença de uso Somente para Campings Place!
  * 
  **/
+/**
+ * [Description Connections]
+ */
 class Connections 
 {
+    /**
+     * @return [type]
+     */
     public function masterDB() {
 
         $this->host = '172.23.0.2:3306';
@@ -19,6 +25,9 @@ class Connections
         return $this;
     }
 
+    /**
+     * @return [type]
+     */
     public function secondaryDB() {
 
         $this->host = '172.23.0.2:3306';
@@ -28,6 +37,9 @@ class Connections
         return $this;
     }
 
+    /**
+     * @return [type]
+     */
     public function getJson() {
 
         $this->host = '';

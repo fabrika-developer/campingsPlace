@@ -128,3 +128,17 @@ docker-compose up
 ```
 docker-compose up -d --force-recreate
 ```
+
+## PHP Documentor 
+
+- Para instalar 
+
+```
+composer require --dev phpdocumentor/shim
+```
+
+- Para Ejecutar
+
+```
+php vendor/bin/phpdoc run -d php -t documentation --title CampingsPlace --template="clean" --cache-folder [folder-cache]
+```

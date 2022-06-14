@@ -9,8 +9,18 @@
  * 
  **/
 
+/**
+ * [Description login]
+ */
 class login {
 
+    /**
+     * @param mixed $user
+     * @param mixed $pass
+     * @param mixed $secondaryDB
+     * 
+     * @return [type]
+     */
     public function login($user, $pass, $secondaryDB){
 
 

@@ -1,8 +1,22 @@
 <?php
-
+/**
+ * @version     0.0.1
+ * @package     
+ * @subpackage  
+ * @author      Fabrika Dev <david.snege@gmail.com>
+ * @copyright   2021 Fabrika Dev (Campings Place)
+ * @license     Licença de uso Somente para Campings Place!
+ * 
+ **/
+/**
+ * [Description GeneralCrudSr]
+ */
     class GeneralCrudSr
     {
         // Connection to DB
+        /**
+         * @return [type]
+         */
         public function connectionData()
         {
             $db = new PDO('mysql:host=172.23.0.2:3306;dbname=campingsPlaceMysql', 'root', 'root');
@@ -11,6 +25,14 @@
             return $db;
         }
         // Select Data Query
+        /**
+         * @param mixed $select
+         * @param mixed $from
+         * @param mixed $where
+         * @param mixed $order
+         * 
+         * @return [type]
+         */
         public function selectAllDataFromTable($select,$from,$where,$order)
         {
             $db = $this->connectionData();
@@ -21,6 +43,12 @@
             return $data;
         }
         // Insert data to table
+        /**
+         * @param mixed $database
+         * @param mixed $values
+         * 
+         * @return [type]
+         */
         public function insertDataToTable($database, $values)
         {
             $db = $this->connectionData();
@@ -30,6 +58,13 @@
             // $data = $stmt->fetchAll();
         }
         // Update data to table
+        /**
+         * @param mixed $database
+         * @param mixed $values
+         * @param mixed $where
+         * 
+         * @return [type]
+         */
         public function updateDataToTable($database, $values, $where)
         {
             $a = 0;
@@ -49,6 +84,12 @@
                 $stmt->execute();
         }
         // Delete data to table
+        /**
+         * @param mixed $database
+         * @param mixed $where
+         * 
+         * @return [type]
+         */
         public function deleteDataToTable($database, $where)
         {
             $db = $this->connectionData();
