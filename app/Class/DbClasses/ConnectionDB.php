@@ -5,7 +5,7 @@
         // Connection to DB
         public function connectionData()
         {
-            $db = new PDO('mysql:host=10.5.0.5:3306;dbname=slimmysql', 'root', 'root');
+            $db = new PDO('mysql:host= 172.19.0.2:3306;dbname=campingsPlaceMysql', 'root', 'root');
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
             return $db;

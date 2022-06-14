@@ -1,13 +1,13 @@
 .idea/
 .vscode/
 
-slim/coverage/*
-slim/vendor/*
-slim/logs/*
-slim/mysql_data/*
-slim/phpmyadmin_data/*
+coverage/*
+vendor/*
+logs/*
+mysql_data/*
+phpmyadmin_data/*
 
-slim/mysql_data/
+mysql_data/
 mysql_data/
 mysql_data
 

@@ -1,0 +1,56 @@
+version: '3.7'
+
+volumes:
+    logs:
+        driver: local
+
+services:
+    fdt_CPN:
+        image: php:8-alpine
+        #image: httpd:latest
+        container_name: fdt_CPN
+        depends_on:
+            - sql_CPN
+        links:
+            - sql_CPN
+        build:
+            context: /home/laptoplenovo/Documentos/FDT
+            dockerfile: /home/laptoplenovo/Documentos/FDT/Dockerfile
+        working_dir: /home/laptoplenovo/Documentos/FDT
+        command: php -S 0.0.0.0:8080 -t /home/laptoplenovo/Documentos/FDT
+        environment:
+            docker: "true"
+        ports:
+            - 8080:8080
+        volumes:
+            - .:/home/laptoplenovo/Documentos/FDT
+            - logs:/home/laptoplenovo/Documentos/FDT/logs
+
+    sql_CPN:
+        image: mysql:5.7
+        container_name: sql_CPN
+        environment:
+            MYSQL_ROOT_PASSWORD: 'root'
+            MYSQL_DATABASE: ' campingsPlaceMysql'
+            MYSQL_PASSWORD: 'root'
+        ports:
+        - "6033:3306"
+        volumes: 
+        - ./mysql_data:/var/lib/mysql
+
+    myadm_CPN:
+        image: phpmyadmin/phpmyadmin
+        container_name: myadm_CPN
+        links:
+            - sql_CPN
+        depends_on:
+            - sql_CPN
+        environment:
+            PMA_HOST: mysql
+            PMA_PORT: 3306
+            PMA_ARBITRARY: 1
+        restart: always
+        ports:
+            - 8081:80
+        volumes:
+            - ./phpmyadmin_data:/var/www/html/phpmyadmin
