@@ -53,7 +53,7 @@ $htmlHead = '
       </script>
 
     </head>
-        <body style="font-size:11px;">
+
 
         
     ';
