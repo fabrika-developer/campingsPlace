@@ -32,14 +32,14 @@ $navbar = '
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <li><a class="nav-link" href="dashboard.php">Dashboard</a></li>
-                                <li><a class="nav-link" href="balances.php">MENU 2</a></li>
-                                <li><a class="nav-link" href="envios.php">MENU 3</a></li>
-                                <li><a class="nav-link" href="expediciones.php">MENU 4</a></li>
-                                <li><a class="nav-link" href="pagos.php">MENU 5</a></li>
-                                <li><a class="nav-link" href="comisiones.php">MENU 6</a></li>
-                                <li><a class="nav-link" href="pagos_celit.php">MENU 7</a></li>
-                                <li><a class="nav-link" href="metodos_pago.php">MENU 8</a></li>
-                                <li><a class="nav-link" href="reportes.php">MENU 9</a></li>
+                                <li><a class="nav-link" href="balances.php">Habitaciones</a></li>
+                                <li><a class="nav-link" href="envios.php">Promociones</a></li>
+                                <li><a class="nav-link" href="expediciones.php">Reservados</a></li>
+                                <li><a class="nav-link" href="pagos.php">Clientes</a></li>
+                                <li><a class="nav-link" href="comisiones.php">Datos</a></li>
+                                <li><a class="nav-link" href="pagos_celit.php">Plugins</a></li>
+                                
+                                <li><a class="nav-link" href="reportes.php">Reportes</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
@@ -47,11 +47,17 @@ $navbar = '
                             Tools
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a class="nav-link" href="search_error.php">Tool 1</a></li>
-                                <li><a class="nav-link" href="import_and_resolve_csv.php">Tool 2</a></li>
-                                <li><a class="nav-link" href="import_csv.php">Tool 3</a></li>
-                                <li><a class="nav-link" href="resolve.php">Tool 4</a></li>
-                                <li><a class="nav-link" href="solucionados.php">Tool 5</a></li>
+                                <li><a class="nav-link" href="search_error.php">Subir Habitaciones</a></li>
+                                <li><a class="nav-link" href="import_and_resolve_csv.php">Subir Promociones</a></li>
+                                <li><a class="nav-link" href="import_csv.php">Gestionar Medias</a></li>
+                                <li><a class="nav-link" href="resolve.php">Gestionar SEO</a></li>
+                                <li><a class="nav-link" href="solucionados.php">Gestionar Traducciones</a></li>
+                                <li><a class="nav-link" href="solucionados.php">Gestionar Condiciones</a></li>
+                                <li><a class="nav-link" href="solucionados.php">Gestionar My Home</a></li>
+                                <li><a class="nav-link" href="solucionados.php">Gestionar Mailings</a></li>
+                                <li><a class="nav-link" href="solucionados.php">Gestionar Re-MKT</a></li>
+                                <li><a class="nav-link" href="metodos_pago.php">Pedir Soporte</a></li>
+                                <li><a class="nav-link" href="metodos_pago.php">Cambiar mi Plan</a></li>
                             </ul>
                         </li>                                
                         <li>&nbsp;</li>
