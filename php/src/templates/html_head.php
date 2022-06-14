@@ -13,9 +13,8 @@ $htmlHead = '
     <!doctype html>
     <html lang="en">
 
-
     <head>
-    <link rel="shortcut icon" type="image/jpg" href="favicon.png"/>
+    <link rel="shortcut icon" type="image/jpg" href="../favicon.png"/>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">

@@ -28,8 +28,8 @@
 
  require_once("../templates/html_footer.php");
 
-echo $htmlSearcher;
+// echo $htmlSearcher;
 
-echo $htmlFormLogin;
+// echo $htmlFormLogin;
 
 ?>
