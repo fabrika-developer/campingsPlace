@@ -12,19 +12,19 @@ class Connections
 {
     public function masterDB() {
 
-        $this->host = 'localhost';
+        $this->host = '172.23.0.2:3306';
         $this->user = 'root';
-        $this->pass = '';
-        $this->db = '';
+        $this->pass = 'root';
+        $this->db = 'campingsPlaceMysql';
         return $this;
     }
 
     public function secondaryDB() {
 
-        $this->host = 'localhost';
+        $this->host = '172.23.0.2:3306';
         $this->user = 'root';
-        $this->pass = '';
-        $this->db = '';
+        $this->pass = 'root';
+        $this->db = 'campingsPlaceMysql';
         return $this;
     }
 

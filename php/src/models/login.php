@@ -17,14 +17,14 @@ class login {
         $this->pass = $pass;
 
         $connection = new mysqli ($secondaryDB->host, $secondaryDB->user, $secondaryDB->pass, $secondaryDB->db);
-        $sql =  "SELECT * FROM users WHERE email = '$this->user' ";
+        $sql =  "SELECT * FROM user_class_admin WHERE usermail = '$this->user' ";
         $result = mysqli_query($connection, $sql);
       
         while ($row = mysqli_fetch_array($result)){
             // Seteamos las variables
-            $this->name = $row['name'];
-            $this->email = $row['email'];
-            $this->role = $row['role'];
+            $this->name = $row['username'];
+            $this->email = $row['usermail'];
+            $this->role = $row['userroll'];
             $this->password = $row['password'];
         }
 
