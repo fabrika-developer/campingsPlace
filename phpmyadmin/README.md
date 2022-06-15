@@ -14,11 +14,11 @@
 - user_class_admin_campings
 
 - - _id (primary_key)
+- - user_camping_camping_id
 - - user_camping_username
 - - user_camping_password
 - - user_camping_usermail
 - - user_camping_userroll
-- - user_camping_camping_id
 - - user_camping_camping_name
 - - user_camping_camping_mail
 - - user_camping_active_user
@@ -35,7 +35,7 @@
 - campings_general_data
 
 - - _id (primary_key) 
-- - camping_id (relacionado a 'user_class_admin_campings.camping_id)
+- - camping_id (relacionado a 'user_class_admin_campings.user_camping_camping_id)
 - - camping_name (alta cuando se crea un usuario de camping)*
 - - camping_title (titulo en la ficha de camping)
 - - camping_description_default (descripción corta ficha en el idioma del camping)
