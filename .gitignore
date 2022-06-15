@@ -1,4 +1,4 @@
 vendor
 .vscode
 .phpdoc
-/vendor/
+vendor/

@@ -28,16 +28,18 @@ $htmlHead = '
     <link rel="stylesheet" href="../css/default.css">
 
     </head>
-        <body style="font-size:11px;">
+        <body style="font-size:11px; background-image:url(../images/);">
 ';
 echo $htmlHead;
 
 require_once("../templates/menu.php");
 
-echo $navbar;
-
-
-
+// No exhibimos los menus antes del login
+if (ISSET($_COOKIE['auth']) && $_COOKIE['auth'] == '1') {
+    echo $navbar;
+} else {
+    echo $navbarLogout;
+}
 
 
 $htmlFoot = '

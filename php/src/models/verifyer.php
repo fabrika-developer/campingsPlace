@@ -2,7 +2,7 @@
 if (ISSET($_COOKIE['auth']) && $_COOKIE['auth'] == '1') {
     
 } else {
-
+    $verified = '';
     setcookie("auth", "", time() - 3600);
     setcookie("hola", "", time() - 3600);
     header("Location: login.php");
