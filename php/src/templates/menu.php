@@ -10,7 +10,7 @@
  **/
 
 
-error_reporting(0);
+error_reporting(1);
 
     $navbarLogout = '
     <nav class="navbar navbar-expand-sm navbar-light bg-light sticky-top nav-fill w-100">

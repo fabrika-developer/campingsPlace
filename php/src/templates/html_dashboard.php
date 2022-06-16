@@ -45,6 +45,46 @@ foreach ($consulta as $key => $datos) {
     echo '    </tbody>';
 }
 echo '</table>';
+
+// Selecionando cosas de um camping del inicio al fin
+
+// seleciono el camping por region, departamento, ciudad o pais
+$selectCampingByCountry = select('*', 'campings_general_data', 'WHERE camping_country_id = 1', '_id');
+
+foreach ($selectCampingByCountry as $key => $datos){
+    $datos['camping_description_large'] = utf8_encode($datos['camping_description_large']);
+    print_r($datos);
+
+    echo '</p>';
+
+    $selectAvailabilityByCamping = select('*','places_campings_availability', 'WHERE availability_id = 1', '_id');
+    foreach ($selectAvailabilityByCamping as $key => $datos){
+        print_r($datos);
+
+        echo '</p>';
+
+        $thingsPlacesAvailability = select('*', 'things_places_availability', 'WHERE things_id = 1', '_id');
+        foreach ($thingsPlacesAvailability as $key => $datos){
+            print_r($datos);
+        }
+
+    }
+
+
+
+
+}
+echo '</p>';
+
+
+
+
+
+$places_campings_availability = select('*', 'places_campings_availability', 'WHERE availability_id = 01', '_id');
+foreach ($places_campings_availability as $key => $datos){
+    print_r($datos);
+}
+
 // --- Fim ---
 
 // $htmlFormLogin = '

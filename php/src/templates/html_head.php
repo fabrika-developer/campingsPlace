@@ -11,12 +11,13 @@
 
 $htmlHead = '
     <!doctype html>
-    <html lang="en">
+    <html lang="es">
 
     <head>
     <link rel="shortcut icon" type="image/jpg" href="../favicon.png"/>
     <!-- Required meta tags -->
     <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
     <!-- Bootstrap CSS -->
 

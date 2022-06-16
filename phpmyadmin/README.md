@@ -38,6 +38,7 @@
 - - camping_id (relacionado a 'user_class_admin_campings.user_camping_camping_id)
 - - camping_name (alta cuando se crea un usuario de camping)*
 - - camping_title (titulo en la ficha de camping)
+- - camping_country_id (relacionado con el pais)
 - - camping_description_default (descripción corta ficha en el idioma del camping)
 - - camping_default_language (idioma default para este camping)
 - - camping_description_large (descripción larga ficha)
