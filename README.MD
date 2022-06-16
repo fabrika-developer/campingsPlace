@@ -108,6 +108,8 @@ services:
             PMA_ARBITRARY: 1
         ports:
             - 8081:80
+        depends_on: 
+            - mysql-server
 ```
 
 #### El php 
@@ -122,6 +124,8 @@ services:
             - ./php/src:/var/www/html/
         ports:
             - 8000:80
+        depends_on: 
+            - mysql-server
 ```
 
 ### Verificar  el estado del servicio
