@@ -28,6 +28,28 @@ sudo chmod +x /usr/local/bin/docker-compose
   - 172.23.0.3 (phpmyadmin)
   - 172.23.0.4:3306 (mysql)
 
+#### Configurar los Hosts en /etc/hosts
+
+- Acceder al terminal y editar el archivo hosts
+
+```
+# sudo nano /etc/hosts
+```
+
+- Dentro del archivo hosts poner la info abajo
+
+```
+172.23.0.4 www.phpmyadmin.it phpmyadmin.it http://phpmyadmin.it 
+172.23.0.2 mysqlhost mysqlhost.it
+172.23.0.3 www.campingsplace.it campingsplace.it http://campingsplace.it
+```
+
+- Ahora se puede acceder a las direcciones
+
+- - http://phpmyadmin.it (usar para acceder a phpmyadmin)
+- - http://campingsplace.it (usar para acceder a pagina web)
+- - mysqlhost (usar como host en el login de phpmyadmin), (mysqlhost, root, root)
+
 
 - PS: Las carpetas tienen sus proprios 'docker-compose.yml' si por acaso si necesita subir contenedores solo para debug.
 
