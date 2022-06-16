@@ -134,3 +134,53 @@
 
 - - _id (primary_key)
 - - things_id (relacionado a 'campings_general_data.camping_id)
+
+## Paises del mundo
+- camping_country
+
+- - _id (primary_key)
+- - country_id
+- - country_code
+- - country_lang_acron
+- - country_name
+- - country_name_string
+- - country_lat
+- - country_long
+- - country_postal_code
+
+## Regiones de Paises del mundo
+- camping_country_regions
+
+- - _id (primary_key)
+- - region_id
+- - country_id
+- - region_name
+- - region_name_string
+- - region_lat
+- - region_long
+- - region_postal_code
+
+## Departamentos de Regiones de Paises del mundo
+- camping_country_regions_departments
+
+- - _id (primary_key)
+- - department_id
+- - region_id
+- - department_name
+- - department_name_string
+- - department_lat
+- - department_long
+- - department_postal_code
+
+## Ciudades de Departamentos de Regiones de Paises del mundo
+- camping_country_regions_departments_citys
+
+- - _id (primary_key)
+- - city_id
+- - department_id
+- - city_name
+- - city_name_string
+- - city_lat
+- - city_long
+- - city_postal_code
+
