@@ -12,7 +12,7 @@ class Connections
 {
     public function masterDB() {
 
-        $this->host = '172.23.0.4:3306';
+        $this->host = '172.23.0.2:3306';
         $this->user = 'root';
         $this->pass = 'root';
         $this->db = 'campingsPlaceMysql';
@@ -20,7 +20,7 @@ class Connections
     }
     public function secondaryDB() {
 
-        $this->host = '172.23.0.4:3306';
+        $this->host = '172.23.0.2:3306';
         $this->user = 'root';
         $this->pass = 'root';
         $this->db = 'campingsPlaceMysql';
