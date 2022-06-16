@@ -74,6 +74,9 @@
 - - availability_classification_rate (numero de estrellas de la habitación)
 - - availability_max_persons
 - - availability_min_persons
+- - availability_price_max
+- - availability_price_min
+- - availability_price_per_person
 - - availability_active (si esta activo se muestra)
 - - availability_can_reserve (si esta reservado o no)
 - - availability_start_closed (fecha de inicio de reserva 'indisponible')

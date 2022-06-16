@@ -8,38 +8,25 @@
  * @license     Licença de uso Somente para Campings Place!
  * 
  **/
-/**
- * [Description Connections]
- */
 class Connections 
 {
-    /**
-     * @return [type]
-     */
     public function masterDB() {
 
-        $this->host = '172.23.0.2:3306';
+        $this->host = '172.23.0.4:3306';
         $this->user = 'root';
         $this->pass = 'root';
         $this->db = 'campingsPlaceMysql';
         return $this;
     }
-
-    /**
-     * @return [type]
-     */
     public function secondaryDB() {
 
-        $this->host = '172.23.0.2:3306';
+        $this->host = '172.23.0.4:3306';
         $this->user = 'root';
         $this->pass = 'root';
         $this->db = 'campingsPlaceMysql';
         return $this;
     }
 
-    /**
-     * @return [type]
-     */
     public function getJson() {
 
         $this->host = '';

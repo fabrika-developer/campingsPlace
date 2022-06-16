@@ -1,4 +1,9 @@
 {
+    "autoload": {
+        "psr-4": {
+            "Php\\": "php/"
+        }
+    },
     "require-dev": {
         "phpdocumentor/shim": "^3.3"
     }

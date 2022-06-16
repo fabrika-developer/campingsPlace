@@ -1,0 +1,15 @@
+{
+    "name": "laptoplenovo/php",
+    "authors": [
+        {
+            "name": "davidsnege",
+            "email": "david.snege@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Src\\": "src/"
+        }
+    },
+    "require": {}
+}

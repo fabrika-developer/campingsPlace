@@ -23,9 +23,10 @@ sudo chmod +x /usr/local/bin/docker-compose
 
 #### Las direcciones IP 
 - En general se podra acceder a las seguintes direcciones: (comprobar con docker ps)
-  - 172.23.0.4:3306 (mysql)
+
   - 172.23.0.2 (apache)
   - 172.23.0.3 (phpmyadmin)
+  - 172.23.0.4:3306 (mysql)
 
 
 - PS: Las carpetas tienen sus proprios 'docker-compose.yml' si por acaso si necesita subir contenedores solo para debug.

@@ -13,6 +13,7 @@ class ComposerStaticInit61e3c28f3572d4b4dc327d4d13d1dd39
         ),
         'P' => 
         array (
+            'Php\\' => 4,
             'PharIo\\ComposerDistributor\\' => 27,
         ),
     );
@@ -21,6 +22,10 @@ class ComposerStaticInit61e3c28f3572d4b4dc327d4d13d1dd39
         'phpDocumentor\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/shim/src',
+        ),
+        'Php\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/php',
         ),
         'PharIo\\ComposerDistributor\\' => 
         array (

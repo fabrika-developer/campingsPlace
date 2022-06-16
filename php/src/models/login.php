@@ -8,19 +8,10 @@
  * @license     Licença de uso Somente para Campings Place!
  * 
  **/
+// require_once("../config/ConnectionDB.php");
 
-/**
- * [Description login]
- */
 class login {
 
-    /**
-     * @param mixed $user
-     * @param mixed $pass
-     * @param mixed $secondaryDB
-     * 
-     * @return [type]
-     */
     public function login($user, $pass, $secondaryDB){
 
         $this->user = $user;
@@ -29,12 +20,16 @@ class login {
         $connection = new mysqli ($secondaryDB->host, $secondaryDB->user, $secondaryDB->pass, $secondaryDB->db);
         $sql =  "SELECT * FROM user_class_admin WHERE usermail = '$this->user' ";
         $result = mysqli_query($connection, $sql);
-      
+
+        // print_r($user);
+        // print_r($pass);
+        // print_r($secondaryDB);
+     
         while ($row = mysqli_fetch_array($result)){
             // Seteamos las variables
             $this->name = $row['username'];
             $this->email = $row['usermail'];
-            $this->role = $row['userroll'];
+            $this->role = $row['userrolle'];
             $this->password = $row['password'];
         }
 

@@ -17,7 +17,7 @@ if (ISSET($_POST['pass'])) {
 } 
 
 // Carga del la classe de CrudDB
-require_once('../controllers/CrudDB.php');
+require_once('../controllers/crud.php');
 
 // Tabela de lo select
 echo '<table class="table">';

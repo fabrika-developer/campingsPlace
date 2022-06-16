@@ -8,10 +8,11 @@
  * @license     Licença de uso Somente para Campings Place!
  * 
  **/
+
 ob_start();
+
 require_once("../config/bbdd.php");
 require_once("../templates/html_index.php");
-
 
 $htmlHead = '
     <!doctype html>
@@ -39,6 +40,7 @@ if (ISSET($_COOKIE['auth']) && $_COOKIE['auth'] == '1') {
     echo $navbar;
 } else {
     echo $navbarLogout;
+    echo $login;
 }
 
 
