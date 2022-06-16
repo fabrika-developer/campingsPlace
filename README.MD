@@ -171,3 +171,53 @@ php vendor/bin/phpdoc run -d php -t documentation --title CampingsPlace --templa
 ```
 
 - Para leer la documentacion basta con que se ejecute el index.html que esta dentro de la carpeta 'documentation' en su browser.
+
+## Actualización de las Tablas 
+
+- Toda vez que se actualiza un schema de tablas o columnas o lo que sea se debe poner los cambios dentro del README.MD que esta dentro de la carpeta 'phpmyadmin' para que este pueda servir de mapa de la BBDD cuando se necesite consultar algo.
+
+## GIT actualizar con los cambios de la BBDD 
+
+- Siempre que tengamos cambios en la BBDD y necesitamos subir los cambios a GIT para no perder información debemos seguir los procedimientos.
+
+* En lo terminal hacer git status
+```
+# git status
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   mysql/src/ca-key.pem
+        modified:   mysql/src/client-key.pem
+        modified:   mysql/src/ib_buffer_pool
+        modified:   mysql/src/ib_logfile0
+        modified:   mysql/src/ibdata1
+        modified:   mysql/src/private_key.pem
+        modified:   mysql/src/server-key.pem
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        mysql/src/ibtmp1
+
+```
+* Podemos ver que cosas en la carpeta mysql no estan add
+* No podemos hacer el git add hasta que cambiemos los permisos 
+* Tenemos que parar el docker.
+```
+# docker-compose down
+```
+* Cambiar los permisos de la carpeta mysql para el usuario de nuestro ordenador
+```
+# sudo chown -R laptoplenovo:laptoplenovo mysql
+```
+* Hacer los procedimientos default de git
+```
+# git add *
+# git commit -m "mi mensage"
+# git push
+```
+* Volver a subir el contenedor de docker
+```
+# docker-compose up
+```
+* De esta forma hacemos el backup de las BBDDs en github
