@@ -10,6 +10,7 @@
  **/
 // Carga del la classe de crud
 require_once('../controllers/crud.php');
+require_once('../models/verifyer.php');
 
 
 if (ISSET($_POST['user'])) {
