@@ -180,6 +180,13 @@ php vendor/bin/phpdoc run -d php -t documentation --title CampingsPlace --templa
 
 - Siempre que tengamos cambios en la BBDD y necesitamos subir los cambios a GIT para no perder información debemos seguir los procedimientos.
 
+* Para crear Tags de versiones
+
+```
+git tag v0.0.1
+git push origin v0.0.3
+```
+
 * En lo terminal hacer git status
 ```
 # git status
