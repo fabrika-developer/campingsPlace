@@ -33,14 +33,7 @@ $htmlFormLogin = '
 ';
 
 
-if (ISSET($_COOKIE['auth']) && $_COOKIE['auth'] == true) {
-    header("Location: login.php");
-    exit();         
-}
-
-if (ISSET($data->name) && ISSET($data->auth)) {
-    setcookie("auth", $data->auth, time() + 86400);
-    setcookie("hola", $data->name, time() + 86400);
+if (ISSET($_SESSION["auth"]) && $_SESSION["auth"] == 2) {
     header("Location: dashboard.php");
     exit();     
 }

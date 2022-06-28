@@ -9,7 +9,7 @@
  * 
  **/
 
-setcookie("auth", "", time() - 3600);
-setcookie("hola", "", time() - 3600);
+unset($_SESSION["auth"]); 
+unset($_SESSION["hola"]); 
 header("Location: login.php");
 exit();

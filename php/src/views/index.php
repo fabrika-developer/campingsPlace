@@ -36,13 +36,12 @@ echo $htmlHead;
 require_once("../templates/menu.php");
 
 // No exhibimos los menus antes del login
-if (ISSET($_COOKIE['auth']) && $_COOKIE['auth'] == '1') {
+if (ISSET($_SESSION['auth']) && ISSET($_SESSION['hola'])) {
     echo $navbar;
 } else {
     echo $navbarLogout;
     echo $login;
 }
-
 
 $htmlFoot = '
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>

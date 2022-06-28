@@ -12,42 +12,43 @@
 
 class login {
 
+    // public function login($user, $pass, $secondaryDB){
     public function login($user, $pass, $secondaryDB){
 
+        // Construimos la variables
         $this->user = $user;
         $this->pass = $pass;
-
-        $connection = new mysqli ($secondaryDB->host, $secondaryDB->user, $secondaryDB->pass, $secondaryDB->db);
-        $sql =  "SELECT * FROM user_class_admin WHERE usermail = '$this->user' ";
-        $result = mysqli_query($connection, $sql);
-
-        // print_r($user);
-        // print_r($pass);
-        // print_r($secondaryDB);
-     
-        while ($row = mysqli_fetch_array($result)){
-            // Seteamos las variables
-            $this->name = $row['username'];
-            $this->email = $row['usermail'];
-            $this->role = $row['userrolle'];
-            $this->password = $row['password'];
+        $this->columns = ' usermail, password, username, userroll ';
+        $this->from = ' user_class_admin ';
+        $this->where = '';
+        $this->order = ' _id ';
+        // Verificamos que tiene datos de login
+        if($this->user !== '' && $this->pass !== ''){
+            $this->verifyCredentials = select($this->columns, $this->from, $this->where, $this->order);
+        }else{
+            echo 'Mensagem de necesita preencher su login';
         }
-
-        $this->hash = $this->password;
-        $this->auth = true;
-
-        if (password_verify($this->pass, $this->hash)) {
-            // $this->auth = '¡La contraseña es válida!';
-            setcookie("auth", $this->auth, time() + 3600);
-            setcookie("hola", $this->name, time() + 3600);
-        } else {
-            // $this->auth = 'La contraseña no es válida.';
-            setcookie("auth", "", time() - 3600);
-            setcookie("hola", "", time() - 3600);
+        // Verificamos que la conexion a BBDD esta hecha y ponemos status al login
+        foreach ($this->verifyCredentials as $key => $value) {
+            if($value['usermail'] === $this->user && $value['password'] === $this->pass){
+                $paramOne = true;
+            }else{
+                $paramTwo = true;
+            }
         }
-
-        echo "<br><br>";
-
+        // Definimos que 2 es el parametro para login 
+        $loginStatus = $paramOne + $paramTwo;
+        // Conferimos que si esta bien creamos session o la destruimos
+        if($loginStatus === 2){
+            session_start();
+            $_SESSION["auth"]=$loginStatus; 
+            $_SESSION["hola"]=$value['usermail']; 
+        }else{
+            echo 'not login';
+            unset($_SESSION["auth"]); 
+            unset($_SESSION["hola"]); 
+        }
+        
         return  $this;
     }
 }

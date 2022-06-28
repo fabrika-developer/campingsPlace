@@ -8,9 +8,9 @@
  * @license     Licença de uso Somente para Campings Place!
  * 
  **/
-if(ISSET($_COOKIE['hola'])){
-    $htmlHome = '
-     Bienvenido '.$_COOKIE['hola'].'';
+session_start();
+if(ISSET($_SESSION['hola'])){
+    $htmlHome = ' Bienvenido '.$_SESSION['hola'].'';
 }else{
         $htmlHome = '';
     }

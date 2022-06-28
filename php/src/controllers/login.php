@@ -24,6 +24,7 @@
         //Cargamos al modelo
             require_once("../models/login.php");
             require_once("../config/bbdd.php");
+            require_once("../controllers/crud.php");
         //Cargamos a la vista
             require_once("../views/index.php");
             require_once("../views/login.php");

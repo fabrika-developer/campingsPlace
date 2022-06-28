@@ -8,7 +8,7 @@
  * @license     Licença de uso Somente para Campings Place!
  * 
  **/
-require_once("../models/verifyer.php");
+// require_once("../models/verifyer.php");
 
 
         $user = '' ;

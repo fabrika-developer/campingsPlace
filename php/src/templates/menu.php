@@ -82,7 +82,7 @@ error_reporting(1);
                             <li>&nbsp;</li>
                             ';
 
-                            if(!ISSET($_COOKIE['hola'])){
+                            if(!ISSET($_SESSION['auth'])){
 
                                 $navbar .= '<li><a class="nav-link" href="login.php">Login</a></li>';
 
@@ -98,3 +98,4 @@ error_reporting(1);
                         </div>
             </nav>
         <div class = "container container-fluid">';
+
