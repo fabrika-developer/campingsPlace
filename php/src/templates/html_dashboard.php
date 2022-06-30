@@ -25,6 +25,9 @@ foreach ($selectCampingByCountry as $key => $datoscp){
     $datoscp['camping_description_large'] = utf8_encode($datoscp['camping_description_large']);
 }
 
+
+echo '"', __NAMESPACE__, '"';
+
 echo '
 
 <!-- CARD -->

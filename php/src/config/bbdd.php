@@ -8,6 +8,7 @@
  * @license     Licença de uso Somente para Campings Place!
  * 
  **/
+
 class Connections 
 {
     public function masterDB() {
