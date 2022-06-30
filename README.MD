@@ -187,6 +187,26 @@ git tag v0.0.1
 git push origin v0.0.3
 ```
 
+### Como organizar las versiones:
+
+- Versiones de TAG para BACKEND deben ser terminar en numeros IMPAR (1, 3, 5, 7, 9, etc...)
+
+Ej; v0.0.1, v0.0.3, v0.0.5, v0.0.7  
+
+- Versiones de TAG para FRONTEND deben ser terminar en numeros PARES (2, 4, 6, 8, 10, etc...)
+
+Ej; v0.0.2, v0.0.4, v0.0.6, v0.0.8
+
+- - Realeases Finales de Funcionalidades creadas.
+
+- Para este tipo de realease lo que cambiamos es el primero numero de la version.
+
+Backend:  v1.0.0, v3.0.0, v5.0.0
+Frontend: v2.0.0, v4.0.0, v6.0.0
+
+* De esta forma vamos incrementando features al final y realeases al principio.
+
+
 * En lo terminal hacer git status
 ```
 # git status
