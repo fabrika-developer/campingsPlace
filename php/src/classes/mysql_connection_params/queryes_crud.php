@@ -1,6 +1,15 @@
 <?php
+/**
+ * [Crud default para todo por aqui, mirar como se puede hacer las cosas bien]
+ */
 class queryes_crud
 {
+    /**
+     * [Default conection to BBDD]
+     *
+     * @return [type]
+     * 
+     */
     public function connectionData()
     {
         $db = new PDO('mysql:host=mysqlhost:3306;dbname=campingsPlaceMysql', 'root', 'root', array('charset'=>'utf8'));
@@ -10,6 +19,17 @@ class queryes_crud
         return $db;
     }
 
+    /**
+     * [selectAllDataFromTable]
+     *
+     * @param mixed $select
+     * @param mixed $from
+     * @param mixed $where
+     * @param mixed $order
+     * 
+     * @return [type]
+     * 
+     */
     public function selectAllDataFromTable($select,$from,$where,$order)
     {
         $db = $this->connectionData();
@@ -20,6 +40,15 @@ class queryes_crud
         return $data;
     }
 
+    /**
+     * [insertDataToTable]
+     *
+     * @param mixed $database
+     * @param mixed $values
+     * 
+     * @return [type]
+     * 
+     */
     public function insertDataToTable($database, $values)
     {
         $db = $this->connectionData();
@@ -29,6 +58,16 @@ class queryes_crud
         // $data = $stmt->fetchAll();
     }
 
+    /**
+     * [updateDataToTable]
+     *
+     * @param mixed $database
+     * @param mixed $values
+     * @param mixed $where
+     * 
+     * @return [type]
+     * 
+     */
     public function updateDataToTable($database, $values, $where)
     {
         $a = 0;
@@ -48,6 +87,15 @@ class queryes_crud
             $stmt->execute();
     }
 
+    /**
+     * [deleteDataToTable]
+     *
+     * @param mixed $database
+     * @param mixed $where
+     * 
+     * @return [type]
+     * 
+     */
     public function deleteDataToTable($database, $where)
     {
         $db = $this->connectionData();
