@@ -187,6 +187,14 @@ git tag v0.0.1
 git push origin v0.0.3
 ```
 
+### Tener history en git en su terminal.
+
+- git history es un alias para un commando que se puede ver el arbol de git y sus tags.
+
+```
+git config --global alias.history 'log --pretty="%Cred%h %C(cyan)%ci%C(yellow)[%an]%C(auto)%d%n%C(white)%s%n" --graph --date-order --all'
+```
+
 ### Como organizar las versiones:
 
 - Versiones de TAG para BACKEND deben ser terminar en numeros IMPAR (1, 3, 5, 7, 9, etc...)
